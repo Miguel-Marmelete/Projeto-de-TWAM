@@ -1,0 +1,42 @@
+Questões:
+
+Nota: Avaliar de 1 a 10
+1)
+Usaria este sistema frequentemente ?
+
+9
+2)
+O sistema é demasiado complexo ?
+
+1
+3)
+O sistema é fácil de usar ?
+
+10
+4)
+Necessitaria a ajuda de um técnico para usar o sistema ?
+
+1
+5)
+As funções do sistema estão bem integradas ?
+
+4
+6)
+O sistema é muito inconsistente ?
+
+2
+7)
+Acha que a maioria dos utilizadores iria aprender fácilmente a usar o sistema ?
+
+10
+8)
+Achou o sistema muito complicado de usar ?
+
+2
+9)
+Sentiu-se confiante ao usar o sistema ?
+
+9
+10)
+Acha que precisa de aprender muito antes de conseguir utilizar o sistema ?
+3
