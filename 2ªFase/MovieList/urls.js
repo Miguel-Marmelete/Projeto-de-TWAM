@@ -12,7 +12,7 @@ const urls = {
   NEW_SESSION_ID_URL: `https://api.themoviedb.org/3/authentication/session/new?api_key=${API_KEY}`,
   REQUEST_TOKEN_URL: `https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`,
   CREATE_LIST_URL: `https://api.themoviedb.org/3/list?api_key=${API_KEY}&session_id=`,
-  CALLBACK: "http://localhost:5173/index.html",
+  CALLBACK: "http://localhost:5173",
   TOP_RATED_MOVIES_URL: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${API_KEY}`,
   GET_LIST: `https://api.themoviedb.org/3/list/`,
 };

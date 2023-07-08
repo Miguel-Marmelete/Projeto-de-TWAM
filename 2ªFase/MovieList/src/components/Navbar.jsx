@@ -1,6 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { useRef, useState } from "react";
-import logo from "../assets/logoImage.jpg";
+import { useState } from "react";
 function Navbar() {
   const queryString = new URLSearchParams(window.location.search);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,11 +10,25 @@ function Navbar() {
     queryString.set("movieName", searchParams);
     setInputValue("");
   };
+  const handlePermissions = () => {
+    var userInput = prompt("Please enter moderator token:");
+    if (userInput !== null) {
+      const moderator_token = localStorage.getItem("moderator_token");
+      if (moderator_token === userInput) {
+        localStorage.setItem("moderator", "true");
+        alert("You are now a moderator");
+      } else {
+        alert("Wrong token, try again");
+      }
+    }
+  };
 
   return (
     <div className="navbar_container">
       <div className="logo">
-        <Link to={`/`}>Logo</Link>
+        <Link to={`/`} style={{ color: "#000", textDecoration: "none" }}>
+          Logo
+        </Link>
       </div>
       <div className="navbar_search">
         <input
@@ -29,9 +42,19 @@ function Navbar() {
           Search
         </button>
       </div>
-      <button className="watchlist_button">
-        <Link to={`/watchlist`}>Watchlist</Link>
-      </button>
+      <div>
+        <button className="navbar_rate-button" onClick={handlePermissions}>
+          Mod
+        </button>
+        <button className="watchlist_button">
+          <Link
+            to="/watchlist"
+            style={{ color: "#FFF", textDecoration: "none" }}
+          >
+            Watchlist
+          </Link>
+        </button>
+      </div>
     </div>
   );
 }

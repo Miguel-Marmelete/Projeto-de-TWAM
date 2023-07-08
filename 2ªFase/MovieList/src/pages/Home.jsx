@@ -26,6 +26,8 @@ function Home() {
       }
       searchedMovies();
     } else {
+      if (movieName) {
+      }
       getTopRatedMovies(urls.TOP_RATED_MOVIES_URL);
     }
   }, [location.search]);

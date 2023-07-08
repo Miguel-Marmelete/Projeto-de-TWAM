@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import getMovieById from "../scripts/getMovieById";
@@ -23,7 +24,9 @@ function MovieInfo() {
         alt={movie.title}
       />
       <h1 className="movie_info_title">{movie.title}</h1>
-      <h1 className="movie_info_rating">{movie.vote_average} </h1>
+      <h1 className="movie_info_rating">
+        <FaStar /> {movie.vote_average}{" "}
+      </h1>
 
       <div className="movie_info_release_date_div">
         <h2 className="movie_info_release_date_header">Release Date</h2>

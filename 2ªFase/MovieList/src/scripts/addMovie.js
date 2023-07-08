@@ -1,6 +1,7 @@
 async function addMovie({ movieId }) {
   const list_id = localStorage.getItem("list_id");
   const session_id = localStorage.getItem("session_id");
+  const success_status_code = 12;
   const options = {
     method: "POST",
     headers: {
@@ -17,6 +18,11 @@ async function addMovie({ movieId }) {
     options
   );
   const movieData = await response.json();
-  return movieData;
+
+  if (movieData.status_code === success_status_code) {
+    alert("Movie added to watchlist");
+  } else {
+    alert("Could not add movie to watchlist, try again");
+  }
 }
 export default addMovie;

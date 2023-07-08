@@ -1,11 +1,12 @@
 import MovieCard from "../components/MovieCard";
 import urls from "../../urls";
 import React, { useEffect, useState } from "react";
-
+import handleSearchOutsideHome from "../scripts/handleSearchOutsideHome";
 function Watchlist() {
   const [watchlistMovies, setwatchlistMovies] = useState([]);
   const [change, setChange] = useState(false);
   const watchlistId = localStorage.getItem("list_id");
+  handleSearchOutsideHome();
 
   useEffect(() => {
     const movies = async () => {

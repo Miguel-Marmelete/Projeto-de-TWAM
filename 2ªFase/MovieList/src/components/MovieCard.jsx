@@ -4,6 +4,7 @@ import getMovieById from "../scripts/getMovieById";
 import addMovie from "../scripts/addMovie";
 import checkIfItemInList from "../scripts/checkIfItemInList";
 import removeItem from "../scripts/removeItem";
+import rateMovie from "../scripts/rateMovie";
 import { Link } from "react-router-dom";
 function MovieCard({ movieId, setChange }) {
   const listId = localStorage.getItem("list_id");
@@ -42,13 +43,26 @@ function MovieCard({ movieId, setChange }) {
       setIsItemInList(true);
     }
   };
-
+  const handleRate = async () => {
+    const moderator = localStorage.getItem("moderator");
+    if (moderator === "false") {
+      alert("You are not a moderator!");
+    } else {
+      const rate = prompt("Please enter rating:");
+      var rating = parseInt(rate);
+      if (rating != null && rating >= 0 && rating <= 10) {
+        rateMovie(rate, movieId);
+      } else {
+        alert("Invalid rating");
+      }
+    }
+  };
   return (
     <div className="movie_card">
       <Link to={{ pathname: `/movie/${movieId}` }}>
         <img
           className="movie_card_image"
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
           alt={movie.title}
         />
       </Link>
@@ -58,9 +72,14 @@ function MovieCard({ movieId, setChange }) {
         <p className="rating">
           <FaStar /> {movie.vote_average}
         </p>
-        <button className="add_remove_button" onClick={handleAddRemoveClick}>
-          {isItemInList ? "Remove" : "Add"}
-        </button>
+        <div>
+          <button className="add_remove_button" onClick={handleAddRemoveClick}>
+            {isItemInList ? "Remove" : "Add"}
+          </button>
+          <button className="add_remove_button" onClick={handleRate}>
+            Rate
+          </button>
+        </div>
       </div>
     </div>
   );

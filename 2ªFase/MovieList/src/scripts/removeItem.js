@@ -1,11 +1,7 @@
-import urls from "../../urls";
-
 async function removeItem({ movieId }) {
   const list_id = localStorage.getItem("list_id");
   const session_id = localStorage.getItem("session_id");
-  console.log("id: " + list_id);
-  console.log("session_id: " + session_id);
-  console.log("movie_id: " + movieId);
+  const success_status_code = 13;
 
   if (list_id && session_id) {
     const options = {
@@ -23,7 +19,12 @@ async function removeItem({ movieId }) {
       `https://api.themoviedb.org/3/list/${list_id}/remove_item?session_id=${session_id}`,
       options
     );
-    await response.json();
+    const data = await response.json();
+    if (data.status_code === success_status_code) {
+      alert("Movie removed from watchlist");
+    } else {
+      alert("Could not add movie to watchlist, try again");
+    }
   }
 }
 export default removeItem;

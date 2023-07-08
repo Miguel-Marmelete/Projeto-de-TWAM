@@ -7,7 +7,12 @@ async function autentication() {
   const request_token = queryString.get("request_token");
   console.log(approved);
   console.log(request_token);
+  localStorage.setItem("moderator_token", "moderator");
+  localStorage.setItem("moderator", "false");
+  console.log("approved and request token");
+
   if (approved && request_token) {
+    console.log("approved and request token");
     const { session_id } = await fetch(
       `https://api.themoviedb.org/3/authentication/session/new?api_key=${urls.API_KEY}`,
       {
@@ -23,6 +28,7 @@ async function autentication() {
 
     localStorage.setItem("session_id", session_id);
     window.location = `${urls.CALLBACK}`;
+    console.log("session id");
   } else if (localStorage.getItem("session_id") == null) {
     // Initiates an authentication flow
     // clear session information
@@ -35,6 +41,7 @@ async function autentication() {
 
     // redirect user
     window.location = `https://www.themoviedb.org/authenticate/${request_token}?redirect_to=${urls.CALLBACK}`;
+    console.log("após callback");
   }
 }
 export default autentication;
