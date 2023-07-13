@@ -27,7 +27,9 @@ function Navbar() {
     <div className="navbar_container">
       <div className="logo">
         <Link to={`/`} style={{ color: "#000", textDecoration: "none" }}>
-          Logo
+          Movie
+          <br />
+          List
         </Link>
       </div>
       <div className="navbar_search">

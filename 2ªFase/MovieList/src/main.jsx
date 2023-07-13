@@ -6,21 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Watchlist from "./pages/Watchlist.jsx";
 import MovieInfoPage from "./pages/MovieInfoPage.jsx";
 import Home from "./pages/Home.jsx";
-/*
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "watchlist",
-    element: <Watchlist />,
-  },
-  {
-    path: "movie",
-    element: <MovieInfoPage />,
-  },
-]);*/
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -33,10 +18,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Routes>
   </BrowserRouter>
 );
-/*
-<Route path="movie/:id" element={<Movie />} />
-        <Route path="search" element={<Search />} />
-
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-*/

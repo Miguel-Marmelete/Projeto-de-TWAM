@@ -15,12 +15,11 @@ body {
   overflow: hidden;
 }
 .logo {
-  margin-left: 20px;
-  margin-right: 10px;
+  margin: 10px 20px;
   width: auto;
-
-  font-size: xx-large;
+  font-size: x-large;
 }
+
 .navbar_search-input {
   width: auto;
   height: 30px;

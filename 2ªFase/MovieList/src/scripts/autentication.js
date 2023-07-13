@@ -41,7 +41,6 @@ async function autentication() {
 
     // redirect user
     window.location = `https://www.themoviedb.org/authenticate/${request_token}?redirect_to=${urls.CALLBACK}`;
-    console.log("após callback");
   }
 }
 export default autentication;
